@@ -1,21 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>MegaVisuals</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #f2f2f2;
+            background: #f2f4f7;
             color: #222;
         }
 
         header {
-            background: #111;
+            background: #111827;
             color: white;
             text-align: center;
-            padding: 25px 10px;
+            padding: 25px 15px;
         }
 
         header h1 {
@@ -25,61 +32,119 @@
 
         header p {
             margin: 8px 0 0;
-            color: #ccc;
+            color: #d1d5db;
+        }
+
+        nav {
+            background: #1f2937;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            background: #374151;
+        }
+
+        nav a:hover {
+            background: #4b5563;
         }
 
         .container {
-            width: 90%;
-            max-width: 900px;
+            width: 92%;
+            max-width: 1000px;
             margin: 25px auto;
         }
 
-        .section {
+        .welcome {
             background: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 12px;
-            box-shadow: 0 3px 10px #ccc;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
         }
 
-        .section h2 {
+        .welcome h2 {
             margin-top: 0;
         }
 
-        .photo {
+        section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 15px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        section h2 {
+            margin-top: 0;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .media-card {
+            background: #f9fafb;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 18px;
+        }
+
+        video,
+        audio,
+        img {
             width: 100%;
-            max-width: 500px;
+            max-width: 700px;
             display: block;
-            margin: 15px auto;
+            margin: 10px auto;
             border-radius: 10px;
         }
 
-        video {
-            width: 100%;
-            border-radius: 10px;
-        }
-
-        audio {
-            width: 100%;
+        img {
+            max-height: 500px;
+            object-fit: contain;
         }
 
         .download {
-            display: block;
-            text-align: center;
-            background: #111;
+            display: inline-block;
+            background: #111827;
             color: white;
-            padding: 12px;
-            border-radius: 8px;
             text-decoration: none;
-            margin-top: 15px;
+            padding: 11px 18px;
+            border-radius: 8px;
+            margin-top: 8px;
+        }
+
+        .download:hover {
+            background: #374151;
         }
 
         footer {
-            background: #111;
-            color: white;
+            background: #111827;
+            color: #d1d5db;
             text-align: center;
-            padding: 20px;
+            padding: 25px;
             margin-top: 30px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 27px;
+            }
+
+            .container {
+                width: 94%;
+            }
+
+            section {
+                padding: 15px;
+            }
         }
     </style>
 </head>
@@ -87,51 +152,80 @@
 <body>
 
 <header>
-    <h1>MegaVisuals</h1>
+    <h1>🎬 MegaVisuals</h1>
     <p>Videos • Audios • Pictures</p>
 </header>
 
+<nav>
+    <a href="#home">Home</a>
+    <a href="#videos">Videos</a>
+    <a href="#audios">Audios</a>
+    <a href="#pictures">Pictures</a>
+</nav>
+
 <div class="container">
 
-    <div class="section">
-        <h2>📸 Pictures</h2>
-
-        <img class="photo" src="myphoto.jpg" alt="My Photo">
-
+    <div class="welcome" id="home">
+        <h2>Welcome to MegaVisuals</h2>
+        <p>
+            Your place for videos, audios and pictures.
+            Watch, listen, view and download your favourite files.
+        </p>
     </div>
 
-    <div class="section">
+    <section id="videos">
         <h2>🎬 Videos</h2>
 
-        <video controls>
-            <source src="myvideo.mp4" type="video/mp4">
-            Your browser does not support video playback.
-        </video>
+        <div class="media-card">
+            <h3>My Video</h3>
 
-        <a class="download" href="myvideo.mp4" download>
-            ⬇️ Download Video
-        </a>
+            <video controls>
+                <source src="Videos/myvideo.mp4" type="video/mp4">
+                Your browser does not support video playback.
+            </video>
 
-    </div>
+            <a class="download" href="Videos/myvideo.mp4" download>
+                ⬇ Download Video
+            </a>
+        </div>
+    </section>
 
-    <div class="section">
+    <section id="audios">
         <h2>🎵 Audios</h2>
 
-        <audio controls>
-            <source src="myaudio.mp3" type="audio/mpeg">
-            Your browser does not support audio playback.
-        </audio>
+        <div class="media-card">
+            <h3>My Audio</h3>
 
-        <a class="download" href="myaudio.mp3" download>
-            ⬇️ Download Audio
-        </a>
+            <audio controls>
+                <source src="Audios/myaudio.mp3" type="audio/mpeg">
+                Your browser does not support audio playback.
+            </audio>
 
-    </div>
+            <a class="download" href="Audios/myaudio.mp3" download>
+                ⬇ Download Audio
+            </a>
+        </div>
+    </section>
+
+    <section id="pictures">
+        <h2>🖼️ Pictures</h2>
+
+        <div class="media-card">
+            <h3>My Picture</h3>
+
+            <img src="Pictures/myphoto.jpg" alt="MegaVisuals Picture">
+
+            <a class="download" href="Pictures/myphoto.jpg" download>
+                ⬇ Download Picture
+            </a>
+        </div>
+    </section>
 
 </div>
 
 <footer>
     <p>© 2026 MegaVisuals</p>
+    <p>All Media • One Place</p>
 </footer>
 
 </body>
