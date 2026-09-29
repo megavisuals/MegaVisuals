@@ -54,10 +54,24 @@
             border-radius: 10px;
         }
 
-        .message {
+        video {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        audio {
+            width: 100%;
+        }
+
+        .download {
+            display: block;
             text-align: center;
-            color: #777;
-            padding: 20px;
+            background: #111;
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-top: 15px;
         }
 
         footer {
@@ -79,37 +93,40 @@
 
 <div class="container">
 
-    < class="section">
+    <div class="section">
         <h2>📸 Pictures</h2>
 
-        <img class="photo" src="Pictures/myphoto.jpg" alt="My Photo">
+        <img class="photo" src="myphoto.jpg" alt="My Photo">
 
-  <div class="section">
-    <h2>🎬 Videos</h2>
+    </div>
 
-    <video width="100%" controls>
-        <source src="Videos/myvideo.mp4" type="video/mp4">
-        Your browser does not support video playback.
-    </video>
+    <div class="section">
+        <h2>🎬 Videos</h2>
 
-  </div>
+        <video controls>
+            <source src="myvideo.mp4" type="video/mp4">
+            Your browser does not support video playback.
+        </video>
 
-  <div class="section">
-    <h2>🎵 Audios</h2>
+        <a class="download" href="myvideo.mp4" download>
+            ⬇️ Download Video
+        </a>
 
-    <audio controls style="width: 100%;">
-        <source src="Audios/myaudio.mp3" type="audio/mpeg">
-        Your browser does not support audio playback.
-    </audio>
+    </div>
 
-    <br>
+    <div class="section">
+        <h2>🎵 Audios</h2>
 
-    <a href="Audios/myaudio.mp3" download
-       style="display: block; text-align: center; background: #111; color: white; padding: 12px; border-radius: 8px; text-decoration: none;">
-        ⬇️ Download Audio
-    </a>
+        <audio controls>
+            <source src="myaudio.mp3" type="audio/mpeg">
+            Your browser does not support audio playback.
+        </audio>
 
-  </div>
+        <a class="download" href="myaudio.mp3" download>
+            ⬇️ Download Audio
+        </a>
+
+    </div>
 
 </div>
 
